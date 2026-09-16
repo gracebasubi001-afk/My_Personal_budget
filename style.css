@@ -1,13 +1,117 @@
-h1{
+body {
+    font-family: Arial, sans-serif;
+}
+
+h1 {
     color: lightsalmon;
     background-color: lightskyblue;
     padding: 20px;
     border-radius: 10px;
 }
-.add-expense-section{
-    color:  lightsalmon;
-    background-color:  lightskyblue;
-    padding: 20px;
-    border-radius: 10px; }
-   
 
+.add-expense-section {
+    color: lightsalmon;
+    background-color: lightskyblue;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.expense-section {
+    color: lightsalmon;
+    background-color: lightskyblue;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+/* ---------- Form styling ---------- */
+
+.add-expense-section form {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+}
+
+/* Direct child selector: only inputs that are direct children of the form */
+.add-expense-section form > input {
+    margin-bottom: 10px;
+    padding: 6px;
+    border-radius: 4px;
+    border: none;
+}
+
+/* Negation pseudo-class: style every input that is NOT type="number" */
+.add-expense-section input:not([type="number"]) {
+    font-style: normal;
+}
+
+/* Focus state for inputs */
+.add-expense-section input:focus,
+.add-expense-section select:focus {
+    outline: 3px solid deeppink;
+}
+
+#add-expense-btn {
+    cursor: pointer;
+    background-color: lightsalmon;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+#add-expense-btn:hover {
+    background-color: coral;
+}
+
+/* ---------- Table styling ---------- */
+
+.expenses-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    background-color: white;
+    color: rgb(30, 30, 30);
+}
+
+/* Descendant selector */
+.expense-section td,
+.expense-section th {
+    border: 1px solid lightskyblue;
+    padding: 10px;
+    text-align: left;
+}
+
+.expenses-table thead tr {
+    background-color: lightsalmon;
+    color: white;
+}
+
+/* Pseudo-class based on position: alternating row colors */
+.expenses-table tbody tr:nth-child(even) {
+    background-color: rgb(224, 242, 254);
+}
+
+.expenses-table tbody tr:first-child {
+    font-weight: bold;
+}
+
+/* Hover effect on rows */
+.expenses-table tbody tr:hover {
+    background-color: rgb(255, 218, 200);
+}
+
+/* ---------- Interactive / misc ---------- */
+
+.how-to-section {
+    margin: 15px 0;
+    padding: 10px;
+    border: 1px solid lightskyblue;
+    border-radius: 5px;
+}
+
+.video-section {
+    margin-top: 20px;
+}

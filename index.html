@@ -7,21 +7,101 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<img src="https://cdn-icons-png.flaticon.com/512/2942/2942813.png" alt="Budget Tracker logo" width="60">
 <h1>My Budget Tracker</h1>
-    
+
 <p>Track my income and expenses in one place</p>
 
 <div class="add-expense-section">
     <h2>Add Expense</h2>
-    <input type="text" placeholder ="Expense name">
-    <input type="number" placeholder="amount">
-    <input type="text" placeholder="category">
 
+    <form id="add-expense-form">
+        <label for="expense-name">Expense name</label>
+        <input type="text" id="expense-name" name="expense-name" placeholder="Expense name">
+
+        <label for="expense-amount">Amount</label>
+        <input type="number" id="expense-amount" name="expense-amount" placeholder="Amount">
+
+        <label for="expense-category">Category</label>
+        <select id="expense-category" name="expense-category">
+            <option value="food">Food</option>
+            <option value="transport">Transport</option>
+            <option value="rent">Rent</option>
+            <option value="entertainment">Entertainment</option>
+            <option value="other">Other</option>
+        </select>
+
+        <label for="expense-date">Date</label>
+        <input type="date" id="expense-date" name="expense-date">
+
+        <button type="button" id="add-expense-btn">Add Expense</button>
+    </form>
 </div>
+
 <div class="expense-section">
     <h3>My Expenses.</h3>
-    <input placeholder="No Expense yet">
+
+    <table class="expenses-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Amount</th>
+                <th>Category</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Groceries</td>
+                <td>Ksh 200</td>
+                <td>Food</td>
+                <td>2026-05-02</td>
+            </tr>
+            <tr>
+                <td>Bus Pass</td>
+                <td>Ksh 100</td>
+                <td>Transport</td>
+                <td>2026-09-03</td>
+            </tr>
+            <tr>
+                <td>Apartment Rent</td>
+                <td>Ksh 3000</td>
+                <td>Rent</td>
+                <td>2026-09-05</td>
+            </tr>
+            <tr>
+                <td>Movie Night</td>
+                <td>Ksh 50</td>
+                <td>Entertainment</td>
+                <td>2026-09-08</td>
+            </tr>
+            <tr>
+                <td>Phone Case</td>
+                <td>Ksh 400</td>
+                <td>Other</td>
+                <td>2026-09-10</td>
+            </tr>
+        </tbody>
+    </table>
 </div>
-    
+
+<details class="how-to-section">
+    <summary>How to use this tracker</summary>
+    <p>Fill out the "Add Expense" form with a name, amount, category, and date, then click "Add Expense" to
+    record it. All of your recorded expenses will appear in the table above so you can review your
+    spending at a glance.</p>
+</details>
+
+<div class="video-section">
+    <h3>Budgeting Tip</h3>
+    <iframe width="500" height="300"
+        src="https://www.youtube.com/embed/HQzoZfc3GwQ"
+        title="Budgeting tips video"
+        frameborder="0"
+        allowfullscreen>
+    </iframe>
+</div>
+
 </body>
 </html>
