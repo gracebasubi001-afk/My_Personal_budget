@@ -1,43 +1,111 @@
+/* ==========================================================
+   COLOR PALETTE
+   Primary (headings/buttons):  #FF7F66  (warm coral, refined from lightsalmon)
+   Accent (highlights/hover):   #3FA9DC  (sky blue, refined from lightskyblue)
+   Background:                  #F5FAFE  (soft powder blue)
+   Card background:             #FFFFFF
+   Text (body):                 #2B2B2B
+   Text (muted):                #6B6B6B
+   ========================================================== */
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Nunito Sans', Arial, sans-serif;
+    background-color: #F5FAFE;
+    color: #2B2B2B;
+    margin: 0;
+    padding: 30px 20px;
+    line-height: 1.5;
 }
+
+img {
+    display: block;
+    margin: 0 auto 10px auto;
+}
+
+/* ==========================================================
+   TYPOGRAPHY
+   Headings -> Quicksand | Body text -> Nunito Sans
+   ========================================================== */
+
+h1, h2, h3 {
+    font-family: 'Quicksand', 'Nunito Sans', Arial, sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+p, label, input, select, button, td, th {
+    font-family: 'Nunito Sans', Arial, sans-serif;
+}
+
+/* ==========================================================
+   PAGE HEADING CARD (Box Model)
+   ========================================================== */
 
 h1 {
-    color: lightsalmon;
-    background-color: lightskyblue;
+    color: #FFFFFF;
+    background-color: #FF7F66;
     padding: 20px;
-    border-radius: 10px;
+    margin: 0 auto 8px auto;
+    max-width: 600px;
+    text-align: center;
+    border: 1px solid #e8664b;
+    border-radius: 14px;
+    box-shadow: 0 4px 10px rgba(255, 127, 102, 0.3);
 }
+
+body > p {
+    text-align: center;
+    color: #6B6B6B;
+    margin: 0 auto 25px auto;
+    max-width: 600px;
+    font-size: 0.95rem;
+}
+
+/* ==========================================================
+   ADD EXPENSE FORM CARD (Box Model)
+   ========================================================== */
 
 .add-expense-section {
-    color: lightsalmon;
-    background-color: lightskyblue;
-    padding: 20px;
-    border-radius: 10px;
+    color: #2B2B2B;
+    background-color: #FFFFFF;
+    padding: 20px 25px;
+    margin: 0 auto 25px auto;
+    max-width: 600px;
+    border: 1px solid #dceefb;
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(63, 169, 220, 0.12);
 }
 
-.expense-section {
-    color: lightsalmon;
-    background-color: lightskyblue;
-    padding: 20px;
-    border-radius: 10px;
-    margin-top: 15px;
+.add-expense-section h2 {
+    color: #3FA9DC;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
 }
-
-/* ---------- Form styling ---------- */
 
 .add-expense-section form {
     display: flex;
     flex-direction: column;
-    max-width: 300px;
+    max-width: 320px;
+}
+
+.add-expense-section label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #6B6B6B;
+    margin-bottom: 4px;
 }
 
 /* Direct child selector: only inputs that are direct children of the form */
-.add-expense-section form > input {
-    margin-bottom: 10px;
-    padding: 6px;
-    border-radius: 4px;
-    border: none;
+.add-expense-section form > input,
+.add-expense-section form > select {
+    margin-bottom: 14px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #cfe8f7;
+    background-color: #F5FAFE;
+    color: #2B2B2B;
+    font-size: 0.95rem;
 }
 
 /* Negation pseudo-class: style every input that is NOT type="number" */
@@ -48,70 +116,131 @@ h1 {
 /* Focus state for inputs */
 .add-expense-section input:focus,
 .add-expense-section select:focus {
-    outline: 3px solid deeppink;
+    outline: none;
+    border-color: #3FA9DC;
+    box-shadow: 0 0 0 3px rgba(63, 169, 220, 0.3);
 }
 
 #add-expense-btn {
     cursor: pointer;
-    background-color: lightsalmon;
-    color: white;
+    background-color: #FF7F66;
+    color: #FFFFFF;
     border: none;
-    padding: 8px 12px;
-    border-radius: 4px;
-    font-weight: bold;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.95rem;
     margin-top: 5px;
+    transition: background-color 0.2s ease;
 }
 
 #add-expense-btn:hover {
-    background-color: coral;
+    background-color: #e8664b;
 }
 
-/* ---------- Table styling ---------- */
+/* ==========================================================
+   EXPENSE TABLE CARD (Box Model)
+   ========================================================== */
+
+.expense-section {
+    color: #2B2B2B;
+    background-color: #FFFFFF;
+    padding: 20px 25px;
+    margin: 0 auto 25px auto;
+    max-width: 600px;
+    border: 1px solid #dceefb;
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(63, 169, 220, 0.12);
+}
+
+.expense-section h3 {
+    color: #3FA9DC;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
 
 .expenses-table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 10px;
-    background-color: white;
-    color: rgb(30, 30, 30);
+    margin-top: 5px;
+    background-color: #FFFFFF;
+    color: #2B2B2B;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 /* Descendant selector */
 .expense-section td,
 .expense-section th {
-    border: 1px solid lightskyblue;
-    padding: 10px;
+    border: 1px solid #dceefb;
+    padding: 12px 10px;
     text-align: left;
+    font-size: 0.9rem;
 }
 
 .expenses-table thead tr {
-    background-color: lightsalmon;
-    color: white;
+    background-color: #3FA9DC;
+    color: #FFFFFF;
+}
+
+.expenses-table thead th {
+    font-weight: 700;
+    border-color: #2f8fbe;
 }
 
 /* Pseudo-class based on position: alternating row colors */
 .expenses-table tbody tr:nth-child(even) {
-    background-color: rgb(224, 242, 254);
+    background-color: #EAF6FD;
 }
 
 .expenses-table tbody tr:first-child {
-    font-weight: bold;
+    font-weight: 700;
 }
 
 /* Hover effect on rows */
 .expenses-table tbody tr:hover {
-    background-color: rgb(255, 218, 200);
+    background-color: rgba(255, 127, 102, 0.15);
 }
 
-/* ---------- Interactive / misc ---------- */
+/* ==========================================================
+   INTERACTIVE / MISC ELEMENTS (Box Model)
+   ========================================================== */
 
 .how-to-section {
-    margin: 15px 0;
-    padding: 10px;
-    border: 1px solid lightskyblue;
-    border-radius: 5px;
+    margin: 0 auto 25px auto;
+    max-width: 600px;
+    padding: 14px 20px;
+    background-color: #FFFFFF;
+    border: 1px solid #dceefb;
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(63, 169, 220, 0.12);
+    color: #2B2B2B;
+}
+
+.how-to-section summary {
+    cursor: pointer;
+    font-weight: 700;
+    color: #FF7F66;
 }
 
 .video-section {
-    margin-top: 20px;
+    margin: 0 auto 25px auto;
+    max-width: 600px;
+    padding: 20px 25px;
+    background-color: #FFFFFF;
+    border: 1px solid #dceefb;
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(63, 169, 220, 0.12);
+    text-align: center;
+}
+
+.video-section h3 {
+    color: #3FA9DC;
+    margin-top: 0;
+}
+
+.video-section iframe {
+    max-width: 100%;
+    border-radius: 8px;
 }

@@ -1,2 +1,2 @@
-# My_Personal_budget
-Week 3 assignment
+# Expense_Tracker
+My expenses tracker
